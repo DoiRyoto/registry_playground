@@ -1,62 +1,82 @@
 {
-  "$schema": "https://ui.shadcn.com/registry.json",
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "custom-ui",
-  "version": "0.1.0",
-  "description": "Custom UI component registry compatible with v0",
-  "author": "Custom UI Team",
-  "license": "MIT",
-  "style": "default",
-  "aliases": {
-    "components": "src/components",
-    "utils": "src/lib/utils",
-    "hooks": "src/hooks"
-  },
-  "components": [
+  "homepage": "https://custom-ui.com",
+  "items": [
     {
       "name": "button",
-      "type": "components:ui",
-      "files": ["src/components/ui/button.tsx"],
-      "dependencies": ["class-variance-authority", "clsx", "tailwind-merge"],
-      "devDependencies": ["@types/react", "@types/react-dom"],
-      "registryDependencies": [],
-      "docs": "https://ui.shadcn.com/docs/components/button"
+      "type": "registry:component",
+      "title": "Button",
+      "description": "Displays a button or a component that looks like a button.",
+      "dependencies": ["class-variance-authority", "clsx", "tailwind-merge", "@radix-ui/react-slot"],
+      "files": [
+        {
+          "path": "registry/default/button.tsx",
+          "type": "registry:component"
+        }
+      ]
     },
     {
       "name": "card",
-      "type": "components:ui",
-      "files": ["src/components/ui/card.tsx"],
-      "dependencies": [],
-      "devDependencies": ["@types/react", "@types/react-dom"],
-      "registryDependencies": [],
-      "docs": "https://ui.shadcn.com/docs/components/card"
+      "type": "registry:component",
+      "title": "Card",
+      "description": "Displays a card with header, content, and footer.",
+      "files": [
+        {
+          "path": "registry/default/card.tsx",
+          "type": "registry:component"
+        }
+      ]
     },
     {
       "name": "input",
-      "type": "components:ui",
-      "files": ["src/components/ui/input.tsx"],
-      "dependencies": [],
-      "devDependencies": ["@types/react", "@types/react-dom"],
-      "registryDependencies": [],
-      "docs": "https://ui.shadcn.com/docs/components/input"
+      "type": "registry:component",
+      "title": "Input",
+      "description": "Displays a form input field.",
+      "files": [
+        {
+          "path": "registry/default/input.tsx",
+          "type": "registry:component"
+        }
+      ]
     },
     {
       "name": "badge",
-      "type": "components:ui",
-      "files": ["src/components/ui/badge.tsx"],
+      "type": "registry:component",
+      "title": "Badge",
+      "description": "Displays a badge or a component that looks like a badge.",
       "dependencies": ["class-variance-authority", "clsx", "tailwind-merge"],
-      "devDependencies": ["@types/react", "@types/react-dom"],
-      "registryDependencies": [],
-      "docs": "https://ui.shadcn.com/docs/components/badge"
-    }
-  ],
-  "hooks": [
+      "files": [
+        {
+          "path": "registry/default/badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utils",
+      "description": "Utility functions for styling.",
+      "dependencies": ["clsx", "tailwind-merge"],
+      "files": [
+        {
+          "path": "registry/default/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
     {
       "name": "use-local-storage",
-      "type": "hooks",
-      "files": ["src/hooks/use-local-storage.ts"],
-      "dependencies": [],
-      "devDependencies": ["@types/react"],
-      "registryDependencies": []
+      "type": "registry:hook",
+      "title": "useLocalStorage",
+      "description": "A hook for using local storage.",
+      "files": [
+        {
+          "path": "registry/default/use-local-storage.ts",
+          "type": "registry:hook"
+        }
+      ]
     }
   ]
 }
