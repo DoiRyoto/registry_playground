@@ -12,7 +12,12 @@
   "routes": [
     {
       "src": "/registry.json",
-      "dest": "/registry.json"
+      "dest": "/registry.json",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
     },
     {
       "src": "/(.*)",
