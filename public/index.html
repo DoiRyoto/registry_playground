@@ -59,8 +59,8 @@
 </head>
 <body>
     <div class="header">
-        <h1>🎨 Custom UI Registry</h1>
-        <p>A shadcn/ui compatible component registry for v0</p>
+        <h1>🎨 @custom-ui Registry</h1>
+        <p>A namespaced shadcn/ui registry with v0 support</p>
     </div>
 
     <div class="card">
@@ -86,29 +86,39 @@
     </div>
 
     <div class="card">
-        <h2>🚀 Use with v0</h2>
-        <p>Open individual components in v0:</p>
+        <h2>🚀 Setup Namespace Registry</h2>
+        <p>Add this registry to your project:</p>
+        <div class="code">
+npx shadcn init
+        </div>
+        <p>Then add to your <code>components.json</code>:</p>
+        <div class="code">
+{
+  "registries": {
+    "@custom-ui": "https://ui-registry-kkkfejxtn-doiryotos-projects.vercel.app/{name}.json"
+  }
+}
+        </div>
+
+        <h3>Install Components</h3>
         <div class="component-list">
             <div class="component-item">
                 <h4>Button Component</h4>
                 <div class="code" style="font-size: 12px; margin: 8px 0;">
-                    https://v0.dev/chat/api/open?url=<span class="component-url">https://ui-registry-gc6w9nykq-doiryotos-projects.vercel.app/r/button.json</span>
+                    npx shadcn add @custom-ui/button
                 </div>
-                <a href="https://v0.dev/chat/api/open?url=https://ui-registry-gc6w9nykq-doiryotos-projects.vercel.app/r/button.json" class="v0-link" style="font-size: 12px; padding: 6px 12px;">Open Button in v0</a>
             </div>
             <div class="component-item">
                 <h4>Card Component</h4>
                 <div class="code" style="font-size: 12px; margin: 8px 0;">
-                    https://v0.dev/chat/api/open?url=<span class="component-url">https://ui-registry-gc6w9nykq-doiryotos-projects.vercel.app/r/card.json</span>
+                    npx shadcn add @custom-ui/card
                 </div>
-                <a href="https://v0.dev/chat/api/open?url=https://ui-registry-gc6w9nykq-doiryotos-projects.vercel.app/r/card.json" class="v0-link" style="font-size: 12px; padding: 6px 12px;">Open Card in v0</a>
             </div>
             <div class="component-item">
                 <h4>Input Component</h4>
                 <div class="code" style="font-size: 12px; margin: 8px 0;">
-                    https://v0.dev/chat/api/open?url=<span class="component-url">https://ui-registry-gc6w9nykq-doiryotos-projects.vercel.app/r/input.json</span>
+                    npx shadcn add @custom-ui/input
                 </div>
-                <a href="https://v0.dev/chat/api/open?url=https://ui-registry-gc6w9nykq-doiryotos-projects.vercel.app/r/input.json" class="v0-link" style="font-size: 12px; padding: 6px 12px;">Open Input in v0</a>
             </div>
         </div>
     </div>

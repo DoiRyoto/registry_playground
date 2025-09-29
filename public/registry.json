@@ -1,62 +1,23 @@
 {
   "$schema": "https://ui.shadcn.com/registry.json",
-  "name": "custom-ui",
-  "version": "0.1.0",
-  "description": "Custom UI component registry compatible with v0",
+  "namespace": "@custom-ui",
+  "name": "Custom UI Components",
+  "description": "A custom component registry for shadcn/ui with namespace support",
+  "version": "1.0.0",
   "author": "Custom UI Team",
   "license": "MIT",
+  "homepage": "https://ui-registry-kkkfejxtn-doiryotos-projects.vercel.app",
   "style": "default",
-  "aliases": {
-    "components": "src/components",
-    "utils": "src/lib/utils",
-    "hooks": "src/hooks"
+  "tailwind": {
+    "config": "tailwind.config.js",
+    "css": "globals.css",
+    "baseColor": "slate",
+    "cssVariables": true
   },
-  "components": [
-    {
-      "name": "button",
-      "type": "components:ui",
-      "files": ["src/components/ui/button.tsx"],
-      "dependencies": ["class-variance-authority", "clsx", "tailwind-merge"],
-      "devDependencies": ["@types/react", "@types/react-dom"],
-      "registryDependencies": [],
-      "docs": "https://ui.shadcn.com/docs/components/button"
-    },
-    {
-      "name": "card",
-      "type": "components:ui",
-      "files": ["src/components/ui/card.tsx"],
-      "dependencies": [],
-      "devDependencies": ["@types/react", "@types/react-dom"],
-      "registryDependencies": [],
-      "docs": "https://ui.shadcn.com/docs/components/card"
-    },
-    {
-      "name": "input",
-      "type": "components:ui",
-      "files": ["src/components/ui/input.tsx"],
-      "dependencies": [],
-      "devDependencies": ["@types/react", "@types/react-dom"],
-      "registryDependencies": [],
-      "docs": "https://ui.shadcn.com/docs/components/input"
-    },
-    {
-      "name": "badge",
-      "type": "components:ui",
-      "files": ["src/components/ui/badge.tsx"],
-      "dependencies": ["class-variance-authority", "clsx", "tailwind-merge"],
-      "devDependencies": ["@types/react", "@types/react-dom"],
-      "registryDependencies": [],
-      "docs": "https://ui.shadcn.com/docs/components/badge"
-    }
-  ],
-  "hooks": [
-    {
-      "name": "use-local-storage",
-      "type": "hooks",
-      "files": ["src/hooks/use-local-storage.ts"],
-      "dependencies": [],
-      "devDependencies": ["@types/react"],
-      "registryDependencies": []
-    }
-  ]
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils"
+  },
+  "rsc": false,
+  "tsx": true
 }

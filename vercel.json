@@ -17,8 +17,8 @@
       }
     },
     {
-      "src": "/r/(.*).json",
-      "dest": "/r/$1.json",
+      "src": "/(.*).json",
+      "dest": "/$1.json",
       "headers": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET, OPTIONS",

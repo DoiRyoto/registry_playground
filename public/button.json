@@ -1,0 +1,88 @@
+{
+  "$schema": "https://ui.shadcn.com/registry-item.json",
+  "name": "button",
+  "description": "Displays a button or a component that looks like a button.",
+  "type": "registry:ui",
+  "registryDependencies": ["utils"],
+  "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+  "devDependencies": [],
+  "tailwind": {
+    "config": {
+      "theme": {
+        "extend": {
+          "colors": {
+            "border": "hsl(var(--border))",
+            "input": "hsl(var(--input))",
+            "ring": "hsl(var(--ring))",
+            "background": "hsl(var(--background))",
+            "foreground": "hsl(var(--foreground))",
+            "primary": {
+              "DEFAULT": "hsl(var(--primary))",
+              "foreground": "hsl(var(--primary-foreground))"
+            },
+            "secondary": {
+              "DEFAULT": "hsl(var(--secondary))",
+              "foreground": "hsl(var(--secondary-foreground))"
+            },
+            "destructive": {
+              "DEFAULT": "hsl(var(--destructive))",
+              "foreground": "hsl(var(--destructive-foreground))"
+            },
+            "muted": {
+              "DEFAULT": "hsl(var(--muted))",
+              "foreground": "hsl(var(--muted-foreground))"
+            },
+            "accent": {
+              "DEFAULT": "hsl(var(--accent))",
+              "foreground": "hsl(var(--accent-foreground))"
+            }
+          }
+        }
+      }
+    }
+  },
+  "cssVars": {
+    "light": {
+      "background": "0 0% 100%",
+      "foreground": "222.2 84% 4.9%",
+      "primary": "222.2 47.4% 11.2%",
+      "primary-foreground": "210 40% 98%",
+      "secondary": "210 40% 96%",
+      "secondary-foreground": "222.2 84% 4.9%",
+      "muted": "210 40% 96%",
+      "muted-foreground": "215.4 16.3% 46.9%",
+      "accent": "210 40% 96%",
+      "accent-foreground": "222.2 84% 4.9%",
+      "destructive": "0 84.2% 60.2%",
+      "destructive-foreground": "210 40% 98%",
+      "border": "214.3 31.8% 91.4%",
+      "input": "214.3 31.8% 91.4%",
+      "ring": "222.2 84% 4.9%"
+    },
+    "dark": {
+      "background": "222.2 84% 4.9%",
+      "foreground": "210 40% 98%",
+      "primary": "210 40% 98%",
+      "primary-foreground": "222.2 47.4% 11.2%",
+      "secondary": "217.2 32.6% 17.5%",
+      "secondary-foreground": "210 40% 98%",
+      "muted": "217.2 32.6% 17.5%",
+      "muted-foreground": "215 20.2% 65.1%",
+      "accent": "217.2 32.6% 17.5%",
+      "accent-foreground": "210 40% 98%",
+      "destructive": "0 62.8% 30.6%",
+      "destructive-foreground": "210 40% 98%",
+      "border": "217.2 32.6% 17.5%",
+      "input": "217.2 32.6% 17.5%",
+      "ring": "212.7 26.8% 83.9%"
+    }
+  },
+  "files": [
+    {
+      "path": "ui/button.tsx",
+      "content": "import * as React from \"react\"\nimport { Slot } from \"@radix-ui/react-slot\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst buttonVariants = cva(\n  \"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-destructive-foreground hover:bg-destructive/90\",\n        outline:\n          \"border border-input bg-background hover:bg-accent hover:text-accent-foreground\",\n        secondary:\n          \"bg-secondary text-secondary-foreground hover:bg-secondary/80\",\n        ghost: \"hover:bg-accent hover:text-accent-foreground\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n      },\n      size: {\n        default: \"h-10 px-4 py-2\",\n        sm: \"h-9 rounded-md px-3\",\n        lg: \"h-11 rounded-md px-8\",\n        icon: \"h-10 w-10\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\nexport interface ButtonProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement>,\n    VariantProps<typeof buttonVariants> {\n  asChild?: boolean\n}\n\nconst Button = React.forwardRef<HTMLButtonElement, ButtonProps>(\n  ({ className, variant, size, asChild = false, ...props }, ref) => {\n    const Comp = asChild ? Slot : \"button\"\n    return (\n      <Comp\n        className={cn(buttonVariants({ variant, size, className }))}\n        ref={ref}\n        {...props}\n      />\n    )\n  }\n)\nButton.displayName = \"Button\"\n\nexport { Button, buttonVariants }",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}
