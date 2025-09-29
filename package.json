@@ -10,7 +10,7 @@
     "registry.json"
   ],
   "scripts": {
-    "build": "rollup -c && cp registry.json public/ && cp README.md public/",
+    "build": "mkdir -p public && cp registry.json public/ && cp README.md public/",
     "vercel-build": "npm run build",
     "dev": "rollup -c -w",
     "type-check": "tsc --noEmit",

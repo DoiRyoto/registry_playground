@@ -1,8 +1,10 @@
 import esbuild from 'rollup-plugin-esbuild'
 import dts from 'rollup-plugin-dts'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import { readFileSync } from 'fs'
 
-const name = require('./package.json').main.replace(/\.js$/, '')
+const pkg = JSON.parse(readFileSync('./package.json', 'utf-8'))
+const name = pkg.main.replace(/\.js$/, '')
 
 const bundle = config => ({
   ...config,
